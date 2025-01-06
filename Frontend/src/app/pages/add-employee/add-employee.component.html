@@ -1,0 +1,70 @@
+<div mat-dialog-title>
+  <h1>Employee Form</h1>
+</div>
+
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+  <!-- First Name and Last Name -->
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" placeholder="Ex. Venkatesh" formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" placeholder="Ex. Juttu" formControlName="lastName">
+    </mat-form-field>
+  </div>
+
+  <!-- Email and Phone -->
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Ex. venky@gmail.com" formControlName="emailId">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input matInput type="number" placeholder="Ex. 999-555-3333" formControlName="contactNo">
+    </mat-form-field>
+  </div>
+
+  <!-- Password and Gender -->
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option *ngFor="let val of gender" [value]="val">
+          {{ val }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Department and Role -->
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Department</mat-label>
+      <mat-select formControlName="department">
+        <mat-option *ngFor="let val of department" [value]="val">
+          {{ val }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Role</mat-label>
+      <input matInput type="text" placeholder="Ex. Data Analyst" formControlName="role">
+    </mat-form-field>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <div class="button-container">
+    <button mat-raised-button color="warn" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </div>
+</div>
+</form>

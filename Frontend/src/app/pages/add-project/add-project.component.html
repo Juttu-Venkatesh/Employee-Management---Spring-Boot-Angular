@@ -1,0 +1,62 @@
+<div mat-dialog-title>
+  <h1>Project Form</h1>
+</div>
+
+<form [formGroup]="projectForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <!-- Project Name and Client Name -->
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Project Name</mat-label>
+        <input matInput type="text" formControlName="projectName" placeholder="Ex. XYZ Project" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Client Name</mat-label>
+        <input matInput type="text" formControlName="clientName" placeholder="Ex. John" />
+      </mat-form-field>
+    </div>
+
+    <!-- Email and Contact Number -->
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="emailId" placeholder="Ex. xyz@gmail.com" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="text" formControlName="contactNo" placeholder="Ex. 1234567890" />
+      </mat-form-field>
+    </div>
+
+    <!-- Start Date and Contact Person -->
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput type="date" formControlName="startDate" placeholder="yyyy-mm-dd" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Contact Person</mat-label>
+        <input matInput type="text" formControlName="contactPerson" placeholder="Ex. Jane Doe" />
+      </mat-form-field>
+    </div>
+
+    <!-- Lead By Employee -->
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Lead By Employee</mat-label>
+        <mat-select formControlName="leadByEmployee">
+          <mat-option *ngFor="let employee of employees" [value]="employee.firstName">
+            {{ employee.firstName }} {{ employee.lastName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <div class="button-container">
+      <button mat-raised-button color="warn" [mat-dialog-close]="false">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">Save</button>
+    </div>
+  </div>
+</form>

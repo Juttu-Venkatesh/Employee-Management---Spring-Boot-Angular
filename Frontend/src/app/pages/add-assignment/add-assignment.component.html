@@ -1,0 +1,55 @@
+<div mat-dialog-title>
+    <h1>Project Assign Form</h1>
+</div>
+
+<form [formGroup]="assignForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <!-- Project Name and Client Name -->
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Project Name</mat-label>
+                <mat-select formControlName="projectId">
+                    <mat-option *ngFor="let project of projects" [value]="project.projectId">
+                        {{ project.projectName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Employee Name</mat-label>
+                <mat-select formControlName="employeeName">
+                    <mat-option *ngFor="let employee of employees" [value]="employee.firstName">
+                        {{ employee.firstName }} {{ employee.lastName }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+        <!-- Start Date and Contact Person -->
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Assign Date</mat-label>
+                <input matInput type="date" formControlName="assignedDate" placeholder="yyyy-mm-dd" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Department</mat-label>
+                <mat-select formControlName="role">
+                    <mat-option *ngFor="let role of roles" [value]="role">
+                        {{ role }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+        </div>
+    </div>
+
+    <div mat-dialog-actions>
+        <div class="button-container">
+            <button mat-raised-button color="warn" [mat-dialog-close]="false">Cancel</button>
+            <button mat-raised-button color="primary" type="submit">Save</button>
+        </div>
+    </div>
+</form>

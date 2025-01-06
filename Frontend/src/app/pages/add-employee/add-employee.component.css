@@ -1,0 +1,22 @@
+.content {
+    padding-top: 10px;
+}
+.row {
+    display: flex;
+    gap: 10px;
+
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+.button-container {
+    display: flex;
+    width: 100%; /* Ensure the container takes up the full width */
+    gap: 10px; /* Space between buttons */
+  }
+  
+  .button-container button {
+    flex: 1; /* Make buttons take up equal space */
+  }
+  

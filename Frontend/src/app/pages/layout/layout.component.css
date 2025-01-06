@@ -1,0 +1,28 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .sidenav-wrapper {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+  
+  mat-sidenav {
+    width: 200px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgb(63, 81, 181);
+  }
+  
+  mat-sidenav-content {
+    display: flex;
+  }
+
+  mat-sidenav button {
+    color: white;
+  }
+  

@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>EMPLOYEE MANAGEMENT SYSTEM</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="warn" (click)="logoff()">Logout</button>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="sidenav-wrapper">
+    <mat-sidenav #nav mode="side" opened>
+      <a routerLink="dashboard" routerLinkActive="active"  style="text-decoration: none;">
+        <button mat-button>
+          <mat-icon>home</mat-icon>
+          <span>Dashboard</span>
+        </button>
+      </a>
+      <a routerLink="employee" style="text-decoration: none;">
+        <button mat-button>
+          <mat-icon>people</mat-icon>
+          <span>Employees</span>
+        </button>
+      </a>
+      <a routerLink="project" style="text-decoration: none;">
+        <button mat-button>
+          <mat-icon>work</mat-icon>
+          <span>Projects</span>
+        </button>
+      </a>
+      <a routerLink="assignments" style="text-decoration: none;">
+        <button mat-button>
+          <mat-icon>task</mat-icon>
+          <span>Assignments</span>
+        </button>
+      </a>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

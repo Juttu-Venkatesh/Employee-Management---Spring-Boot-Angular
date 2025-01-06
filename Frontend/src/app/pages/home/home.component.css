@@ -1,0 +1,9 @@
+img {
+    position: fixed;
+    height: 960px; 
+    background-color: #333; 
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+  }
+  

@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto; 
+    justify-content: space-between;
+  }
+  
+  mat-toolbar {
+    width: 1240px;
+  }
+
+  main-body {
+    margin: 20px;
+  }
